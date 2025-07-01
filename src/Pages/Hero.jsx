@@ -1,6 +1,6 @@
 import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
-import ServiceForm from "../components/ServiceForm";
+import ServiceForm from "../Components/ServiceForm";
 import StatsCards from "../components/StatsCards";
 
 function Hero() {
