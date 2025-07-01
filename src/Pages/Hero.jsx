@@ -6,7 +6,7 @@ import StatsCards from "../Components/StatsCards";
 function Hero() {
   const statsCards = [
     {
-      img: "/public/Group.png",
+      img: "/Group.png",
       alt: "House Icon",
       value: "1000+",
       label: (
@@ -16,7 +16,7 @@ function Hero() {
       ),
     },
     {
-      img: "/public/Vector.png",
+      img: "/Vector.png",
       alt: "Commercial Icon",
       value: "500+",
       label: (
@@ -26,7 +26,7 @@ function Hero() {
       ),
     },
     {
-      img: "/public/Group (1).png",
+      img: "/Group (1).png",
       alt: "Car Icon",
       value: "2400+",
       label: (
