@@ -1,7 +1,7 @@
 import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
 import ServiceForm from "../Components/ServiceForm";
-import StatsCards from "../components/StatsCards";
+import StatsCards from "../Components/StatsCards";
 
 function Hero() {
   const statsCards = [
