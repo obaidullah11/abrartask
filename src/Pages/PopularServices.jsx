@@ -44,7 +44,7 @@ function PopularServices() {
   return (
     <section className="relative w-full py-12 px-4 md:px-8 lg:px-16">
       <img
-        src="/Rectangle 71.png"
+        src="/ServicesImages/Rectangle 71.png"
         alt="Background"
         className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none"
       />
