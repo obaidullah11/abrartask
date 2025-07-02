@@ -26,7 +26,7 @@ function Footer() {
                 />
                 <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black rounded-full p-2">
                   <span className="text-white font-medium">
-                    <img src="/public/arrow.png" alt="" />
+                    <img src="/arrow.png" alt="" />
                   </span>
                 </button>
               </div>
@@ -35,7 +35,7 @@ function Footer() {
             <div className="flex justify-center space-x-4 pt-4">
               <a href="#" className="p-2 rounded-full">
                 <span className="w-10 h-auto block">
-                  <img src="/public/fb.png" alt="" />
+                  <img src="/fb.png" alt="" />
                 </span>
               </a>
               <a href="#" className="p-2 rounded-full">
@@ -62,15 +62,15 @@ function Footer() {
                 </h3>
                 <div className="space-y-1">
                   <div className="text-xs sm:text-lg flex items-start justify-start">
-                    <span className="mr-2">📧</span>
+                    {/* <span className="mr-2">📧</span> */}
                     <span>Email Here</span>
                   </div>
                   <div className="text-xs sm:text-lg flex items-center justify-center">
-                    <span className="mr-2">📱</span>
+                    {/* <span className="mr-2">📱</span> */}
                     <span>+0123456789</span>
                   </div>
                   <div className="text-xs sm:text-lg flex items-center justify-center">
-                    <span className="mr-2">📍</span>
+                    {/* <span className="mr-2">📍</span> */}
                     <span>Address Here</span>
                   </div>
                 </div>
