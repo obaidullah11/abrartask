@@ -1,10 +1,7 @@
-import React from "react";
-import FooterCard from "../Components/FooterCard";
-
 function Footer() {
   return (
     <>
-      <footer className="bg-[#FFAF1E] text-black relative pt-10 pb-6 px-2 sm:px-6 lg:px-8">
+      <footer className="bg-[#FFAF1E] text-black pt-10 pb-6 px-2 sm:px-6 z-0 relative lg:px-8">
         <div className="block sm:hidden py-8 px-4">
           <div className="flex justify-center mb-6">
             <div className="text-center flex items-center justify-center gap-2">

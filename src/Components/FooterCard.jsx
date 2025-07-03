@@ -1,8 +1,10 @@
 import React from "react";
 
-function FooterCard() {
+function FooterCard({ className = "" }) {
   return (
-    <div className="sm:block hidden absolute -bottom-10 z-40 right-15 border border-zinc-200 w-[90%] max-w-xs bg-white  p-4 sm:p-6">
+    <div
+      className={`border border-zinc-200 w-[90%] max-w-xs bg-white p-4 sm:p-6 ${className}`}
+    >
       <div className="flex items-center gap-4 mb-4">
         <img
           src="https://avatar.iran.liara.run/public/31"

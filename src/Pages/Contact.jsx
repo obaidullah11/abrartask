@@ -70,7 +70,9 @@ function Contact() {
           </div>
         </form>
       </div>
-      <FooterCard />
+      <div className="absolute z-50 hidden sm:block right-0 -bottom-10">
+        <FooterCard />
+      </div>
     </div>
   );
 }

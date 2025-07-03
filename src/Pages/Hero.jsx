@@ -2,8 +2,12 @@ import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
 import ServiceForm from "../Components/ServiceForm";
 import StatsCards from "../Components/StatsCards";
+import Model from "../Components/Model";
+import { useState } from "react";
 
 function Hero() {
+  const [openModel, setOpenModel] = useState(false);
+
   const statsCards = [
     {
       img: "/Group.png",
@@ -66,14 +70,15 @@ function Hero() {
             Locked Out? Locked In?
           </p>
           <Button
-            className="absolute sm:left-0 sm:top-60 top-32 -left-1 transform -translate-y-1/2 bg-black text-white text-[7px] px-4 sm:py-2 font-semibold text-sm z-50 flex flex-row-reverse items-center justify-center gap-2"
+            className="absolute sm:left-0 cursor-pointer sm:top-60 top-32 -left-1 transform -translate-y-1/2 bg-black text-white text-[7px] px-4 sm:py-2 font-semibold text-sm z-50 flex flex-row-reverse items-center justify-center gap-2"
             style={{
               writingMode: "vertical-lr",
               textOrientation: "mixed",
             }}
+            onClick={() => setOpenModel(true)}
             icon="/SVG.png"
             iconClass="w-3 h-3 sm:w-4 sm:h-4"
-            text="MAKE APPOINTMENT"
+            text="MAKE A QUOTE"
           />
 
           <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold text-black leading-tight">
@@ -145,6 +150,7 @@ function Hero() {
         <ServiceForm />
       </div>
       <StatsCards cards={statsCards} />
+      <Model open={openModel} onClose={() => setOpenModel(false)} />
     </div>
   );
 }

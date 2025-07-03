@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import { HiMenu, HiChevronDown } from "react-icons/hi";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <>
-      <div className="w-screen px-3 sm:px-6 md:px-14 py-4 z-10 relative">
+      <div className="w-screen  px-3 sm:px-6 md:px-14 py-4 z-20 relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8 w-full">
             <div className="flex items-center gap-0">
-              <img
-                src="/logo.png"
-                alt="Key-Kong Logo"
-                className="h-7 w-7 sm:h-9 sm:w-9 object-contain"
-              />
+              <Link to="/">
+                {" "}
+                <img
+                  src="/logo.png"
+                  alt="Key-Kong Logo"
+                  className="h-7 w-7 sm:h-9 sm:w-9 object-contain"
+                />
+              </Link>
+
               <div className="text-black font-bold text-[10px] sm:text-sm leading-tight whitespace-nowrap">
                 KEY-KONG <br /> LOCKSMITH
               </div>
             </div>
             <ul className="hidden lg:flex flex-wrap gap-7 text-sm text-black justify-center w-full">
-              <li className="cursor-pointer">About</li>
+              <Link to="/about-us" className="cursor-pointer">
+                About
+              </Link>
               <li className="cursor-pointer flex items-center gap-1">
                 Services <HiChevronDown className="text-base" />
               </li>
