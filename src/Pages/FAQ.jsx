@@ -40,7 +40,7 @@ const faqData = [
   },
 ];
 
-function FAQ() {
+function FAQ({ hideReadMoreBtn = false }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -91,11 +91,13 @@ function FAQ() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <button className="bg-[#FFAF1E] text-black font-medium px-6 py-2 ">
-            Read More
-          </button>
-        </div>
+        {!hideReadMoreBtn && (
+          <div className="mt-8 text-center">
+            <button className="bg-[#FFAF1E] text-black font-medium px-6 py-2 ">
+              Read More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

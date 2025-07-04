@@ -1,11 +1,7 @@
-import React from "react";
-import FooterCard from "../Components/FooterCard";
-
 function Contact() {
   return (
     <div className="w-full bg-[url('/key-pattern.png')] bg-black text-white px-4 sm:px-8 md:px-16 py-12 relative">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
-        {/* Left Side */}
         <div>
           <h3 className="text-sm uppercase tracking-wide text-white font-semibold">
             Reliable Locksmith
@@ -20,9 +16,7 @@ function Contact() {
           </p>
         </div>
 
-        {/* Right Side - Form */}
         <form className="grid grid-cols-2 gap-4 text-black">
-          {/* Name */}
           <div className="col-span-1">
             <label htmlFor="name" className="block text-sm text-white mb-1">
               Enter your name
@@ -48,7 +42,6 @@ function Contact() {
             />
           </div>
 
-          {/* Message */}
           <div className="col-span-2">
             <label htmlFor="message" className="block text-sm text-white mb-1">
               Enter your message
@@ -70,9 +63,9 @@ function Contact() {
           </div>
         </form>
       </div>
-      <div className="absolute z-50 hidden sm:block right-0 -bottom-10">
+      {/* <div className="absolute z-50 hidden sm:block right-0 -bottom-10">
         <FooterCard />
-      </div>
+      </div> */}
     </div>
   );
 }

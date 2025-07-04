@@ -5,7 +5,7 @@ import Customers from "../Pages/Customers";
 import Services from "../Pages/Services";
 import WhyChooseUs from "../Pages/WhyChooseUs";
 
-function AboutUs() {
+function AboutUs({ buttonText }) {
   return (
     <>
       <div className="w-full bg-blue-100 h-1/2 sm:h-screen relative overflow-hidden">
@@ -63,7 +63,7 @@ function AboutUs() {
       <Services />
       <WhyChooseUs />
       <Customers className="" bgImage="/bg-1.png" />
-      <ContactUsSection />
+      <ContactUsSection buttonText="GET IN TOUCH" />
     </>
   );
 }

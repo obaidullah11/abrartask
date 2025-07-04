@@ -26,7 +26,7 @@ function FooterCard({ className = "" }) {
           placeholder="Type here..."
           className="w-full px-3 py-2 pr-24 border text-black placeholder:text-zinc-400 border-gray-300"
         />
-        <button className="absolute right-1 top-1 bottom-1 bg-[#FFAF1E] text-black font-medium px-4 ">
+        <button className="absolute cursor-pointer right-1 top-1 bottom-1 bg-[#FFAF1E] text-black font-medium px-4 ">
           Submit
         </button>
       </div>

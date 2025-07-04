@@ -1,7 +1,34 @@
+import { useEffect, useRef, useState } from "react";
+import { FiArrowUp, FiMail } from "react-icons/fi";
+import FooterCard from "../Components/FooterCard";
+
 function Footer() {
+  const [showFooterCard, setShowFooterCard] = useState(false);
+  const mailBtnRef = useRef(null);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        cardRef.current &&
+        !cardRef.current.contains(event.target) &&
+        mailBtnRef.current &&
+        !mailBtnRef.current.contains(event.target)
+      ) {
+        setShowFooterCard(false);
+      }
+    }
+    if (showFooterCard) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showFooterCard]);
+
   return (
     <>
-      <footer className="bg-[#FFAF1E] text-black pt-10 pb-6 px-2 sm:px-6 z-0 relative lg:px-8">
+      <footer className="bg-[#FFAF1E] text-black pt-10 pb-6 px-2 sm:px-6 z-50 relative lg:px-8">
         <div className="block sm:hidden py-8 px-4">
           <div className="flex justify-center mb-6">
             <div className="text-center flex items-center justify-center gap-2">
@@ -227,7 +254,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* We Are Here */}
             <div className="md:col-span-3">
               <div className="flex items-center gap-1 mb-1 whitespace-nowrap">
                 <h3 className="text-xs font-semibold">WE ARE HERE 24/7</h3>
@@ -243,7 +269,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Newsletter */}
             <div className="md:col-span-2">
               <h3 className="text-xs font-semibold mb-1">NEWSLETTER</h3>
               <div className="flex">
@@ -265,12 +290,35 @@ function Footer() {
               </div>
             </div>
 
-            <div className="md:col-span-1 flex items-start justify-center">
-              <img
+            <div className="md:col-span-1 flex flex-col items-center justify-center gap-3">
+              <div
+                ref={mailBtnRef}
+                onClick={() => setShowFooterCard((prev) => !prev)}
+                className="bg-black rounded-full p-2 flex items-center justify-center cursor-pointer"
+              >
+                <FiMail className="text-[#FFAF1E] w-6 h-6 cursor-pointer" />
+              </div>
+              {showFooterCard && (
+                <div
+                  ref={cardRef}
+                  className="absolute bottom-[18rem] z-50 right-0"
+                >
+                  <FooterCard />
+                </div>
+              )}
+              <div className="bg-black rounded-full p-2 flex items-center justify-center">
+                <FiArrowUp
+                  className="text-[#FFAF1E] w-6 h-6 cursor-pointer"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                />
+              </div>
+              {/* <img
                 src="/icons.png"
                 alt="Icons"
-                className="w-10 h-auto cursor-pointer object-contain"
-              />
+                className="w-10 h-auto cursor-pointer object-contain mt-2"
+              /> */}
             </div>
           </div>
         </div>

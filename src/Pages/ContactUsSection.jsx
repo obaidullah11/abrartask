@@ -1,15 +1,17 @@
-import React from "react";
-import FooterCard from "../Components/FooterCard";
 import Footer from "../Pages/Footer";
 import Model from "../Components/Model";
 
-function ContactUsSection() {
+function ContactUsSection({
+  mainImage = "/logo.png",
+  humanImage = "/about us/aboutusimagehuman.png",
+  buttonText = "Learn More",
+}) {
   return (
     <>
       {/* Desktop & Tablet */}
       <div className="hidden sm:block relative w-full overflow-hidden h-[60vh]">
         <img
-          src="/logo.png"
+          src={mainImage}
           alt="Background"
           className="absolute inset-0 w-40 h-auto object-cover z-0"
         />
@@ -30,15 +32,15 @@ function ContactUsSection() {
               reliable, and secure solutions just a call away.
             </p>
             <button className="bg-black text-white px-6 py-3 w-fit text-sm sm:text-base hover:bg-gray-800 transition">
-              Get In Touch
+              {buttonText}
             </button>
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
             <img
-              src="/about us/aboutusimagehuman.png"
+              src={humanImage}
               alt="Locksmith Illustration"
-              className="w-full max-w-md object-contain sm:-right-20 lg:absolute lg:-right-20 lg:-bottom-50 lg:max-w-[480px]"
+              className="w-full max-w-md object-center object-contain aspect-square sm:-right-20 lg:absolute lg:-right-42 lg:-top-[15rem] lg:max-w-full"
             />
           </div>
         </div>
@@ -47,7 +49,7 @@ function ContactUsSection() {
       {/* Mobile Only Layout */}
       <div className="block sm:hidden w-full h-[80vh] bg-[#F0AE19]/100 flex items-start justify-start relative px-2">
         <img
-          src="/logo.png"
+          src={mainImage}
           alt="Background Logo"
           className="absolute inset-0 w-40 h-auto object-contain opacity-10 z-0 mx-auto my-auto"
           style={{
@@ -68,14 +70,14 @@ function ContactUsSection() {
               24/7 locksmith services for your home, business, or car.
             </p>
             <button className="bg-black text-white text-xs px-2 py-1 mt-2 hover:bg-gray-800 whitespace-nowrap transition">
-              Get In Touch
+              {buttonText}
             </button>
           </div>
           <div className="absolute top-0 right-0 h-full flex items-center justify-end w-2/5">
             <img
-              src="/about us/aboutusimagehuman.png"
+              src={humanImage}
               alt="Locksmith Illustration"
-              className="h-full w-auto object-cover"
+              className="h-full w-auto  object-cover"
               style={{
                 display: "block",
                 clipPath: "polygon(49% 1%, 100% 0, 100% 100%, 0% 100%)",
@@ -86,9 +88,9 @@ function ContactUsSection() {
       </div>
 
       <div className="relative">
-        <FooterCard className="hidden max-w-xs p-2 sm:w-full sm:max-w-[20%] h-auto sm:p-0 sm:block absolute right-10 -top-[15rem] shadow-lg z-[999]" />
+        {/* <FooterCard className="hidden max-w-xs p-2 sm:w-full sm:max-w-[20%] h-auto sm:p-0 sm:block absolute right-10 -top-[15rem] shadow-lg z-[999]" /> */}
 
-        <div className="flex absolute max-w-xs p-2 sm:w-full sm:max-w-[25%] h-auto sm:p-0 -top-[24rem] sm:right-[20rem] sm:-top-[25rem] z-[999]">
+        <div className="flex absolute max-w-xs p-2 sm:w-full sm:max-w-[25%] h-auto sm:p-0 -top-[24rem] sm:right-[20rem] sm:-top-[24rem] z-[999]">
           <Model inline />
         </div>
       </div>
