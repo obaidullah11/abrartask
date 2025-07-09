@@ -13,6 +13,7 @@ import AutomotiveService from "./ui/AutomotiveService";
 import ResedentialLockSmith from "./ui/ResedentialLockSmith";
 import CommercialLockSmith from "./ui/CommercialLockSmith";
 import EmergencyLockSmith from "./ui/EmergencyLockSmith";
+import ServiceArea from "./Pages/ServiceArea";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/residential" element={<ResedentialLockSmith />} />
         <Route path="/commercial" element={<CommercialLockSmith />} />
         <Route path="/emergency" element={<EmergencyLockSmith />} />
+        <Route path="/serviceArea" element={<ServiceArea />} />
 
         <Route
           path="/"
