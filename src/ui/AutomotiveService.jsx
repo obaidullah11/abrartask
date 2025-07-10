@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import Button from "../Components/Button";
 import Cards from "../Components/Cards";
 import ServiceWeProvide from "../Components/ServiceWeProvide";
-import FAQ from "../Pages/FAQ";
+import FAQ from "../Components/FAQ";
 import Customers from "../Pages/Customers";
 import MapSection from "../Components/MapSection";
 import ContactUsSection from "../Pages/ContactUsSection";

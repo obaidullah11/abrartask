@@ -73,7 +73,9 @@ function Navbar() {
               </div>
              <Link 
              to='/serviceArea'> <li className="cursor-pointer">Service Areas</li></Link>
+             <Link to="/faq">
               <li className="cursor-pointer">FAQ</li>
+             </Link>
               <li className="cursor-pointer">Contact Us</li>
             </ul>
           </div>

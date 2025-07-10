@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Customers from "./Pages/Customers";
-import FAQ from "./Pages/FAQ";
+import FAQ from "./Components/FAQ";
 import Footer from "./Pages/Footer";
 import Hero from "./Pages/Hero";
 import PopularServices from "./Pages/PopularServices";
@@ -14,6 +14,7 @@ import ResedentialLockSmith from "./ui/ResedentialLockSmith";
 import CommercialLockSmith from "./ui/CommercialLockSmith";
 import EmergencyLockSmith from "./ui/EmergencyLockSmith";
 import ServiceArea from "./Pages/ServiceArea";
+import FaqPage from "./Pages/FaqPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/commercial" element={<CommercialLockSmith />} />
         <Route path="/emergency" element={<EmergencyLockSmith />} />
         <Route path="/serviceArea" element={<ServiceArea />} />
+        <Route path="/faq" element={<FaqPage/>} />
 
         <Route
           path="/"
