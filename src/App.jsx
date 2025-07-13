@@ -22,12 +22,9 @@ function App() {
       <Routes>
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/automotive" element={<AutomotiveService />} />
-
         <Route path="/residential" element={<ResedentialLockSmith />} />
         <Route path="/commercial" element={<CommercialLockSmith />} />
         <Route path="/emergency" element={<EmergencyLockSmith />} />
-        <Route path="/serviceArea" element={<ServiceArea />} />
-        <Route path="/faq" element={<FaqPage/>} />
 
         <Route
           path="/"

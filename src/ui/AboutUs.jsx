@@ -18,10 +18,8 @@ function AboutUs({ buttonText }) {
           />
         </div>
 
-        <Navbar />
-
         <Button
-          className="absolute left-0 sm:top-[15rem] top-[10rem] cursor-pointer transform bg-black text-white text-[5px] sm:text-[7px] px-4 sm:px-2 py-1 font-semibold text-sm z-50 flex flex-row-reverse items-center whitespace-nowrap justify-center gap-2"
+          className="absolute left-0 sm:top-[15rem] top-[10rem] cursor-pointer transform bg-black text-white text-[5px] sm:text-[7px] px-4 sm:px-2 py-1 font-semibold text-sm z-10 flex flex-row-reverse items-center whitespace-nowrap justify-center gap-2"
           style={{
             writingMode: "vertical-lr",
             textOrientation: "mixed",
@@ -30,6 +28,8 @@ function AboutUs({ buttonText }) {
           iconClass="w-3 h-3"
           text="INSTANT QUOTE"
         />
+
+        <Navbar className="relative z-30" />
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-6 px-10 md:px-12 xl:px-20 py-10 z-10 relative">
           <div className="flex flex-col justify-center text-start sm:text-left  space-y-4 max-w-full sm:pl-10 lg:pl-16">
