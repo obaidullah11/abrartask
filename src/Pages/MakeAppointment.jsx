@@ -13,8 +13,8 @@ const MakeAppointment = () => {
   return (
     <>
       {/* 💠 Blue Section */}
-      <div className="w-full bg-blue-100 relative overflow-hidden pb-10 sm:pb-0">
-        {/* Background Image */}
+      <div className="w-full bg-blue-100 relative overflow-hidden pb-10">
+        {/* Background Pattern */}
         <img
           src="/bg-1.png"
           alt="Pattern"
@@ -27,10 +27,7 @@ const MakeAppointment = () => {
         {/* INSTANT QUOTE Button */}
         <Button
           className="absolute left-0 sm:top-[12rem] top-[10rem] transform bg-black text-white text-[5px] sm:text-[7px] px-4 sm:px-2 py-1 font-semibold z-50 flex flex-row-reverse items-center whitespace-nowrap justify-center gap-2"
-          style={{
-            writingMode: "vertical-lr",
-            textOrientation: "mixed",
-          }}
+          style={{ writingMode: "vertical-lr", textOrientation: "mixed" }}
           icon="/SVG.png"
           iconClass="w-3 h-3"
           text="INSTANT QUOTE"
@@ -44,218 +41,116 @@ const MakeAppointment = () => {
           className="absolute right-0 top-0 w-2/3 sm:w-96 md:w-96 h-auto object-contain z-10"
         />
 
-        {/* Main Content */}
-        <div className="px-6 py-10 grid grid-cols-2 lg:grid-cols-2 gap-6 relative z-10">
-          {/* Heading + Form (for large screens) */}
-          <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
-            <h2 className="text-xl sm:text-3xl font-semibold text-black">
-              FAST. EASY. SECURE.
-            </h2>
-            <p className="text-2xl sm:text-4xl font-bold">
-              Book a Service <span className="text-[#FFAF1E]">Online</span>
-            </p>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left Column: Headings + Form */}
+          <div className="flex flex-col space-y-6">
+            {/* Headings */}
+            <div className="space-y-4 text-center lg:text-left">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-black">
+                FAST. EASY. SECURE.
+              </h2>
+              <p className="text-3xl sm:text-4xl font-bold">
+                Book a Service <span className="text-[#FFAF1E]">Online</span>
+              </p>
+            </div>
 
-            {/* Form inside blue section on large screens */}
- <div className="hidden sm:block max-w-2xl mx-auto bg-white rounded-lg shadow-md px-6 py-8">
-  <form className="space-y-4">
-    {/* Name Field */}
-    <input
-      type="text"
-      id="Name"
-      placeholder="Your Name"
-      className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-    />
+            {/* Form (visible only on sm and up) */}
+            <div className="hidden sm:block bg-white rounded-lg shadow-md px-6 py-8">
+              <form className="space-y-4">
+                <input type="text" placeholder="Your Name" className="input-style" />
+                <div className="flex gap-4">
+                  <input type="email" placeholder="Email Address" className="input-style w-1/2" />
+                  <input type="tel" placeholder="Phone Number" className="input-style w-1/2" />
+                </div>
+                <input type="text" placeholder="Address" className="input-style" />
+                <div className="flex gap-4">
+                  <input type="text" placeholder="City" className="input-style w-1/2" />
+                  <input type="text" placeholder="State" className="input-style w-1/2" />
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
+                    <img src="/calendar-icon.png" alt="Date Icon" className="w-5 h-5 mr-2" />
+                    <input type="text" placeholder="Service Date" className="w-full py-2 bg-transparent outline-none" />
+                  </div>
+                  <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
+                    <img src="/clock-icon.png" alt="Time Icon" className="w-5 h-5 mr-2" />
+                    <input type="text" placeholder="Service Time" className="w-full py-2 bg-transparent outline-none" />
+                  </div>
+                </div>
+                <textarea placeholder="Your Message" className="input-style h-24" />
+                <button type="submit" className="bg-[#FFAF1E] text-black w-full py-2 px-6 rounded font-medium text-sm">
+                  Submit
+                </button>
+              </form>
 
-    {/* Email + Phone in One Line */}
-    <div className="flex flex-col sm:flex-row gap-4">
-      <input
-        type="email"
-        placeholder="Your Email Address"
-        className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-      <input
-        type="tel"
-        placeholder="Your Phone Number"
-        className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-    </div>
+              {/* Icons */}
+              <div className="flex justify-center gap-6 mt-6">
+                {[
+                  { icon: "/truck-fast.png", label: "Fast" },
+                  { icon: "/smile.png", label: "Easy" },
+                  { icon: "/lock.png", label: "Secure" },
+                ].map(({ icon, label }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <img src={icon} alt={label} className="w-6 h-6" />
+                    <p className="text-sm font-medium">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-    {/* Address */}
-    <input
-      type="text"
-      placeholder="Address"
-      className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-    />
-
-    {/* City + State in One Line */}
-    <div className="flex flex-col sm:flex-row gap-4">
-      <input
-        type="text"
-        placeholder="City"
-        className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-      <input
-        type="text"
-        placeholder="State"
-        className="border-2 border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-    </div>
-
-    {/* Service Date + Time with Icons */}
-    <div className="flex flex-col sm:flex-row gap-4">
-      <div className="flex items-center w-full border-2 border-black rounded-lg px-2">
-        <img src="/calendar-icon.png" alt="Date Icon" className="w-5 h-5 mr-2" />
-        <input
-          type="text"
-          placeholder="Service Date"
-          className="w-full bg-transparent outline-none py-2"
-        />
+          {/* Right Column: Hero Image (already placed above) */}
+        </div>
       </div>
 
-      <div className="flex items-center w-full border-2 border-black rounded-lg px-2">
-        <img src="/clock-icon.png" alt="Time Icon" className="w-5 h-5 mr-2" />
-        <input
-          type="text"
-          placeholder="Service Time"
-          className="w-full bg-transparent outline-none py-2"
-        />
-      </div>
-    </div>
+      {/* Mobile Form */}
+      <div className="block sm:hidden px-4 py-6">
+        <div className="max-w-[90%] mx-auto bg-white shadow-lg rounded-xl p-4">
+          <form className="space-y-4">
+            <input type="text" placeholder="Your Name" className="input-style" />
+            <div className="flex gap-2">
+              <input type="email" placeholder="Email" className="input-style w-1/2" />
+              <input type="tel" placeholder="Phone" className="input-style w-1/2" />
+            </div>
+            <input type="text" placeholder="Address" className="input-style" />
+            <div className="flex gap-2">
+              <input type="text" placeholder="City" className="input-style w-1/2" />
+              <input type="text" placeholder="State" className="input-style w-1/2" />
+            </div>
+            <div className="flex gap-2">
+              <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
+                <img src="/calendar-icon.png" alt="Date Icon" className="w-5 h-5 mr-2" />
+                <input type="text" placeholder="Service Date" className="w-full bg-transparent py-2 outline-none" />
+              </div>
+              <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
+                <img src="/clock-icon.png" alt="Time Icon" className="w-5 h-5 mr-2" />
+                <input type="text" placeholder="Service Time" className="w-full bg-transparent py-2 outline-none" />
+              </div>
+            </div>
+            <textarea placeholder="Your Message" className="input-style h-24" />
+            <button type="submit" className="bg-[#FFAF1E] text-black w-full py-2 px-6 rounded font-medium text-sm">
+              Submit
+            </button>
+          </form>
 
-    {/* Message */}
-    <textarea
-      placeholder="Your Message"
-      className="border-2 border-black rounded-lg p-2 w-full h-24 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-    />
-
-    {/* Submit */}
-    <button
-      type="submit"
-      className="bg-[#FFAF1E] text-black px-6 py-2 font-medium text-sm sm:text-base rounded w-full"
-    >
-      Submit
-    </button>
-  </form>
-
-  {/* Icons Row */}
-  <div className="flex items-center justify-center gap-6 mt-6">
-    <div className="flex items-center gap-2">
-      <img src="/truck-fast.png" alt="Fast" className="w-6 h-6" />
-      <p className="text-sm font-medium">Fast</p>
-    </div>
-    <div className="flex items-center gap-2">
-      <img src="/smile.png" alt="Easy" className="w-6 h-6" />
-      <p className="text-sm font-medium">Easy</p>
-    </div>
-    <div className="flex items-center gap-2">
-      <img src="/lock.png" alt="Secure" className="w-6 h-6" />
-      <p className="text-sm font-medium">Secure</p>
-    </div>
-  </div>
-</div>
+          {/* Info Icons */}
+          <div className="flex justify-center gap-4 mt-6">
+            {[
+              { icon: "/truck-fast.png", label: "Fast" },
+              { icon: "/smile.png", label: "Easy" },
+              { icon: "/lock.png", label: "Secure" },
+            ].map(({ icon, label }) => (
+              <div key={label} className="flex items-center gap-2">
+                <img src={icon} alt={label} className="w-5 h-5" />
+                <p className="text-sm">{label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* 📱 Form outside blue section on mobile */}
-  <div className="block sm:hidden px-4 py-6">
-  <div className="max-w-[90%] mx-auto bg-white shadow-lg rounded-xl p-4">
-    <form className="space-y-4">
-      {/* Name */}
-      <input
-        type="text"
-        placeholder="Your Name"
-        className="border border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
 
-      {/* Email + Phone */}
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-1/2 border border-black rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        />
-        <input
-          type="tel"
-          placeholder="Phone"
-          className="w-1/2 border border-black rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        />
-      </div>
-
-      {/* Address */}
-      <input
-        type="text"
-        placeholder="Address"
-        className="border border-black rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-
-      {/* City + State */}
-      <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="City"
-          className="w-1/2 border border-black rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        />
-        <input
-          type="text"
-          placeholder="State"
-          className="w-1/2 border border-black rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-        />
-      </div>
-
-      {/* Date + Time with Icons */}
-      <div className="flex gap-2">
-        <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
-          <img src="/calendar-icon.png" alt="Date Icon" className="w-5 h-5 mr-2" />
-          <input
-            type="text"
-            placeholder="Service Date"
-            className="w-full bg-transparent outline-none py-2"
-          />
-        </div>
-
-        <div className="flex items-center w-1/2 border border-black rounded-lg px-2">
-          <img src="/clock-icon.png" alt="Time Icon" className="w-5 h-5 mr-2" />
-          <input
-            type="text"
-            placeholder="Service Time"
-            className="w-full bg-transparent outline-none py-2"
-          />
-        </div>
-      </div>
-
-      {/* Message */}
-      <textarea
-        placeholder="Your Message"
-        className="border border-black rounded-lg p-2 w-full h-24 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-      />
-
-      {/* Submit */}
-      <button
-        type="submit"
-        className="bg-[#FFAF1E] text-black px-6 py-2 font-medium text-sm rounded w-full"
-      >
-        Submit
-      </button>
-    </form>
-
-    {/* Info Icons */}
-    <div className="flex items-center justify-center gap-4 mt-6">
-      <div className="flex items-center gap-2">
-        <img src="/truck-fast.png" alt="Fast" className="w-5 h-5" />
-        <p className="text-sm">Fast</p>
-      </div>
-      <div className="flex items-center gap-2">
-        <img src="/smile.png" alt="Easy" className="w-5 h-5" />
-        <p className="text-sm">Easy</p>
-      </div>
-      <div className="flex items-center gap-2">
-        <img src="/lock.png" alt="Secure" className="w-5 h-5" />
-        <p className="text-sm">Secure</p>
-      </div>
-    </div>
-  </div>
-</div>
 <section className="px-4 py-10 max-w-7xl mx-auto">
   {/* Heading */}
   <div className="text-center mb-8">
