@@ -15,6 +15,7 @@ import CommercialLockSmith from "./ui/CommercialLockSmith";
 import EmergencyLockSmith from "./ui/EmergencyLockSmith";
 import ServiceArea from "./Pages/ServiceArea";
 import FaqPage from "./Pages/FaqPage";
+import MakeAppointment from "./Pages/MakeAppointment";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/residential" element={<ResedentialLockSmith />} />
         <Route path="/commercial" element={<CommercialLockSmith />} />
         <Route path="/emergency" element={<EmergencyLockSmith />} />
+        <Route path="/make-appointment" element={<MakeAppointment/>}/>
 
         <Route
           path="/"

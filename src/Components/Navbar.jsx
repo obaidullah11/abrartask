@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { HiMenu, HiChevronDown, HiX } from "react-icons/hi";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const [showServices, setShowServices] = useState(false);
-
+const navigate =useNavigate();
   return (
     <>
       <div className="w-screen px-3 sm:px-6 md:px-14 py-4 z-20 relative">
@@ -84,12 +84,15 @@ function Navbar() {
                 showMenu ? "hidden" : ""
               } lg:flex`}
             >
+              
               <Button
                 className="bg-black cursor-pointer text-white px-3 sm:px-6 gap-1 sm:gap-2 py-[7px] text-[7px] sm:text-sm whitespace-nowrap"
                 icon="/SVG.png"
                 iconClass="h-2 sm:h-auto object-cover"
                 text="MAKE APPOINTMENT"
-              />
+                onClick={() => navigate("/make-appointment")}
+                />
+                
               <Button
                 className="bg-[#FFAF1E] cursor-pointer flex items-center justify-center gap-1 sm:gap-2 text-black px-2 sm:px-4 py-[7px] font-semibold text-[7px] sm:text-sm whitespace-nowrap"
                 icon="/phone icon.png"
