@@ -27,6 +27,8 @@ function App() {
         <Route path="/commercial" element={<CommercialLockSmith />} />
         <Route path="/emergency" element={<EmergencyLockSmith />} />
         <Route path="/make-appointment" element={<MakeAppointment/>}/>
+        <Route path="/serviceArea" element={<ServiceArea />} />
+        <Route path="/faq" element={<FaqPage/>}/>
 
         <Route
           path="/"
